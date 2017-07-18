@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5259685D1F1E3B1B00A6B3A3"
+               BlueprintIdentifier = "525968231F1E25C600A6B3A3"
                BuildableName = "ShootEmUp.app"
                BlueprintName = "ShootEmUp"
                ReferencedContainer = "container:ShootEmUp.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "525968711F1E3B1B00A6B3A3"
+               BlueprintIdentifier = "525968371F1E25C600A6B3A3"
                BuildableName = "ShootEmUpTests.xctest"
                BlueprintName = "ShootEmUpTests"
                ReferencedContainer = "container:ShootEmUp.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5259687C1F1E3B1B00A6B3A3"
+               BlueprintIdentifier = "525968421F1E25C600A6B3A3"
                BuildableName = "ShootEmUpUITests.xctest"
                BlueprintName = "ShootEmUpUITests"
                ReferencedContainer = "container:ShootEmUp.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5259685D1F1E3B1B00A6B3A3"
+            BlueprintIdentifier = "525968231F1E25C600A6B3A3"
             BuildableName = "ShootEmUp.app"
             BlueprintName = "ShootEmUp"
             ReferencedContainer = "container:ShootEmUp.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5259685D1F1E3B1B00A6B3A3"
+            BlueprintIdentifier = "525968231F1E25C600A6B3A3"
             BuildableName = "ShootEmUp.app"
             BlueprintName = "ShootEmUp"
             ReferencedContainer = "container:ShootEmUp.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5259685D1F1E3B1B00A6B3A3"
+            BlueprintIdentifier = "525968231F1E25C600A6B3A3"
             BuildableName = "ShootEmUp.app"
             BlueprintName = "ShootEmUp"
             ReferencedContainer = "container:ShootEmUp.xcodeproj">

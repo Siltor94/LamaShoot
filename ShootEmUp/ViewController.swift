@@ -10,18 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lama: UIImageView!
+
+    var animationForLama: UIViewPropertyAnimator!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
+    }
+    
+    @IBAction func moveTUIButton(_ sender: UIButton) {
+        animationForLama.stopAnimation(false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func moveTDButton(_ sender: UIButton) {
+        animationForLama = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: {
+            if sender.tag == 0 {
+                self.lama.center.x = sender.frame.origin.x + sender.frame.size.width + self.lama.frame.size.width
+            } else {
+                self.lama.center.x = self.view.frame.size.width - sender.frame.size.width - self.lama.frame.size.width
+            }
+        })
+        animationForLama.startAnimation()
     }
-
-
 }
 
