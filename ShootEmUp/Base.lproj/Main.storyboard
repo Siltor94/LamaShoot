@@ -23,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="field2" translatesAutoresizingMaskIntoConstraints="NO" id="9b7-9a-nIv">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-fe-RI8">
                                 <rect key="frame" x="583" y="291" width="70" height="70"/>
                                 <constraints>
@@ -55,7 +59,7 @@
                                 <rect key="frame" x="306" y="272" width="54" height="83"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2961154513888889" green="0.79008050086825166" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2961154513888889" green="0.79008050086825166" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ug-Q3-Qxy" secondAttribute="bottom" constant="20" id="1DS-hO-wuo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="8t1-Db-cSg"/>
@@ -80,6 +84,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="field2" width="1280" height="640"/>
         <image name="letf-button" width="300" height="300"/>
         <image name="right-button" width="300" height="300"/>
         <image name="this-lama" width="54" height="83"/>

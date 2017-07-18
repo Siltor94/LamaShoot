@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lama: UIImageView!
 
     var animationForLama: UIViewPropertyAnimator!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
