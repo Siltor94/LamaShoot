@@ -12,7 +12,7 @@ import UIKit
 class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var myPicker: UIPickerView!
-    let difficulties = ["Facile", "Normal", "Difficile"]
+    let difficulties = ["Easy", "Normal", "Diffcult"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

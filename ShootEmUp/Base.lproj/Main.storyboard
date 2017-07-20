@@ -65,6 +65,26 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="lig-Hb-Ogr"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjj-io-wHO">
+                                <rect key="frame" x="116" y="307" width="142" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22192258883248728" green="0.22192258883248728" blue="0.22192258883248728" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Try again ?">
+                                    <color key="titleColor" red="0.97240975329268464" green="1" blue="0.96643793513948884" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.37080345227194017" green="0.37032826223966919" blue="0.37862864847715738" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kxq-mu-uwS" kind="show" id="UgY-oY-cvo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU DIED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-rL-BAE">
+                                <rect key="frame" x="67" y="209" width="240" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.15923816120000001" alpha="0.99389982880000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2961154513888889" green="0.79008050086825166" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -87,7 +107,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deathMessage" destination="gHC-rL-BAE" id="jL7-Ij-PH4"/>
                         <outlet property="lama" destination="7Ug-Q3-Qxy" id="O8y-qv-dgZ"/>
+                        <outlet property="retryButton" destination="qjj-io-wHO" id="yKA-VT-X5O"/>
                         <outletCollection property="enemies" destination="eMh-g4-IpJ" collectionClass="NSMutableArray" id="mge-Xg-Ts2"/>
                         <outletCollection property="enemies" destination="z6l-az-kqQ" collectionClass="NSMutableArray" id="yjL-SH-6hd"/>
                         <outletCollection property="enemies" destination="tOF-ml-OOM" collectionClass="NSMutableArray" id="NvI-gH-WMn"/>
@@ -97,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="257"/>
+            <point key="canvasLocation" x="533.60000000000002" y="256.82158920539734"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="Ovv-sf-m8E">

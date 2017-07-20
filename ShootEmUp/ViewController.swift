@@ -12,13 +12,18 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lama: UIImageView!
     @IBOutlet var enemies: [UIImageView]!
+    @IBOutlet weak var deathMessage: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
 
+    
     var animationForLama: UIViewPropertyAnimator!
     var location = CGPoint(x: 0, y: 0)
     var verif: Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deathMessage.isHidden = true
+        retryButton.isHidden = true
         enemies.forEach{(img: UIImageView) in
             animateEnnemy(img)
         }
@@ -51,17 +56,7 @@ class ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.verif = false
     }
-
-    
-    @objc private func detectColision(_ enemy: UIImageView){
-
-            enemies.forEach{(img: UIImageView) in
-                if (lama.layer.frame.intersects((img.layer.presentation()?.frame)!)) {
-                    print("COLLISION")
-                }
-            }
-        }
-
+    // ANIMATION DES ENNEMIES
     private func animateEnnemy(_ img: UIImageView){
         var t: TimeInterval?
         switch img.tag {
@@ -86,6 +81,23 @@ class ViewController: UIViewController {
                 img.center.y = -100
                 self.animateEnnemy(img)
             })
+        }
+    }
+    
+    // GO TO MENU
+    @objc private func goToMenu(){
+        
+    }
+    
+    // DETECTION DE COLLISION
+    @objc private func detectColision(_ enemy: UIImageView){
+        
+        enemies.forEach{(img: UIImageView) in
+            if (lama.layer.frame.intersects((img.layer.presentation()?.frame)!)) {
+                print("COLLISION")
+                deathMessage.isHidden = false
+                retryButton.isHidden = false
+            }
         }
     }
 }
