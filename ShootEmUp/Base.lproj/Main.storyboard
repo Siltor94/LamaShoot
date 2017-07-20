@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field2" translatesAutoresizingMaskIntoConstraints="NO" id="9b7-9a-nIv">
-                                <rect key="frame" x="0.0" y="0.0" width="1280" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1280" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-3M-4DM">
                                 <rect key="frame" x="123" y="89" width="59" height="45"/>
@@ -40,36 +39,8 @@
                                     <constraint firstAttribute="width" constant="59" id="wm9-ir-egg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-fe-RI8">
-                                <rect key="frame" x="583" y="291" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="0gA-fe-RI8" secondAttribute="height" multiplier="1:1" id="QNh-l1-7Rz"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="RjA-RP-wJP"/>
-                                    <constraint firstAttribute="width" constant="70" id="yJ7-Nr-exi"/>
-                                    <constraint firstAttribute="width" secondItem="0gA-fe-RI8" secondAttribute="height" multiplier="1:1" id="zBb-Ey-klR"/>
-                                </constraints>
-                                <state key="normal" image="right-button"/>
-                                <connections>
-                                    <action selector="moveTDButton:" destination="BYZ-38-t0r" eventType="touchDown" id="Scc-Cf-GW6"/>
-                                    <action selector="moveTUIButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOh-qo-N3R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50y-jQ-M4H">
-                                <rect key="frame" x="20" y="290" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="JSM-5s-Syc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="PqE-mL-8Ri"/>
-                                    <constraint firstAttribute="width" secondItem="50y-jQ-M4H" secondAttribute="height" multiplier="64:65" constant="1.076923076923066" id="cxr-40-a5u"/>
-                                    <constraint firstAttribute="width" secondItem="50y-jQ-M4H" secondAttribute="height" multiplier="64:65" constant="1.076923076923066" id="hwj-Us-slD"/>
-                                </constraints>
-                                <state key="normal" image="letf-button"/>
-                                <connections>
-                                    <action selector="moveTDButton:" destination="BYZ-38-t0r" eventType="touchDown" id="0OV-Ox-4Yc"/>
-                                    <action selector="moveTUIButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWt-4H-VTC"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this-lama" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-Q3-Qxy">
-                                <rect key="frame" x="306.5" y="272" width="54" height="83"/>
+                                <rect key="frame" x="160.5" y="564" width="54" height="83"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="yOS-K9-9eA">
                                 <rect key="frame" x="29" y="28" width="59" height="45"/>
@@ -79,14 +50,14 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-az-kqQ">
-                                <rect key="frame" x="288" y="68" width="72" height="59"/>
+                                <rect key="frame" x="-4" y="68" width="72" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="z6l-az-kqQ" secondAttribute="height" multiplier="72:59" id="5eS-rL-x1d"/>
                                     <constraint firstAttribute="width" constant="72" id="gAp-uq-lef"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-g4-IpJ">
-                                <rect key="frame" x="415" y="20" width="59" height="45"/>
+                                <rect key="frame" x="123" y="20" width="59" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="6P8-As-nPz"/>
                                     <constraint firstAttribute="width" secondItem="eMh-g4-IpJ" secondAttribute="height" multiplier="59:45" id="QPS-EK-gzS"/>
@@ -100,26 +71,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ug-Q3-Qxy" secondAttribute="bottom" constant="20" id="1DS-hO-wuo"/>
                             <constraint firstItem="Nv2-3M-4DM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="123" id="1tj-0z-0Lt"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3yY-7c-Xb1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="8t1-Db-cSg"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EA2-D3-vcL"/>
                             <constraint firstItem="tOF-ml-OOM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GPY-6N-uas"/>
-                            <constraint firstItem="50y-jQ-M4H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gyu-p1-ZZM"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LMJ-FX-dR2"/>
                             <constraint firstItem="yOS-K9-9eA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="29" id="MUF-sp-202"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0gA-fe-RI8" secondAttribute="bottom" constant="14" id="O0m-uq-qwc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0gA-fe-RI8" secondAttribute="bottom" constant="14" id="UDn-hb-TB6"/>
-                            <constraint firstAttribute="trailing" secondItem="0gA-fe-RI8" secondAttribute="trailing" constant="14" id="Y2O-fr-Xqj"/>
                             <constraint firstItem="Nv2-3M-4DM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="YMI-VU-lnl"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="YwJ-y5-dpN"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zjb-hW-lU0"/>
-                            <constraint firstAttribute="trailing" secondItem="0gA-fe-RI8" secondAttribute="trailing" constant="14" id="euL-jg-SF0"/>
                             <constraint firstAttribute="trailing" secondItem="eMh-g4-IpJ" secondAttribute="trailing" constant="193" id="fTA-Vl-5x2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="lUc-Tt-2IF"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="leading" secondItem="z6l-az-kqQ" secondAttribute="trailing" constant="55" id="oA9-LO-S1K"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oWa-3R-Fam"/>
                             <constraint firstItem="tOF-ml-OOM" firstAttribute="leading" secondItem="yOS-K9-9eA" secondAttribute="trailing" constant="134" id="oZT-E8-Y5o"/>
                             <constraint firstItem="7Ug-Q3-Qxy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="px6-eJ-zhy"/>
-                            <constraint firstItem="50y-jQ-M4H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qan-QP-Gol"/>
                             <constraint firstItem="yOS-K9-9eA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="riE-J7-1SP"/>
                             <constraint firstItem="z6l-az-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="zGP-Om-rhz"/>
                         </constraints>
@@ -141,8 +103,6 @@
     <resources>
         <image name="field2" width="1280" height="640"/>
         <image name="lama-enemy" width="224" height="128"/>
-        <image name="letf-button" width="300" height="300"/>
-        <image name="right-button" width="300" height="300"/>
         <image name="this-lama" width="54" height="83"/>
     </resources>
 </document>
