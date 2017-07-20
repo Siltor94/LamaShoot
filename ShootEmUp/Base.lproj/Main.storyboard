@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -100,26 +99,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ug-Q3-Qxy" secondAttribute="bottom" constant="20" id="1DS-hO-wuo"/>
                             <constraint firstItem="Nv2-3M-4DM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="123" id="1tj-0z-0Lt"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3yY-7c-Xb1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="8t1-Db-cSg"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EA2-D3-vcL"/>
                             <constraint firstItem="tOF-ml-OOM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GPY-6N-uas"/>
-                            <constraint firstItem="50y-jQ-M4H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gyu-p1-ZZM"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LMJ-FX-dR2"/>
                             <constraint firstItem="yOS-K9-9eA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="29" id="MUF-sp-202"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0gA-fe-RI8" secondAttribute="bottom" constant="14" id="O0m-uq-qwc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0gA-fe-RI8" secondAttribute="bottom" constant="14" id="UDn-hb-TB6"/>
-                            <constraint firstAttribute="trailing" secondItem="0gA-fe-RI8" secondAttribute="trailing" constant="14" id="Y2O-fr-Xqj"/>
                             <constraint firstItem="Nv2-3M-4DM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="YMI-VU-lnl"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="YwJ-y5-dpN"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zjb-hW-lU0"/>
-                            <constraint firstAttribute="trailing" secondItem="0gA-fe-RI8" secondAttribute="trailing" constant="14" id="euL-jg-SF0"/>
                             <constraint firstAttribute="trailing" secondItem="eMh-g4-IpJ" secondAttribute="trailing" constant="193" id="fTA-Vl-5x2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="50y-jQ-M4H" secondAttribute="bottom" constant="15" id="lUc-Tt-2IF"/>
                             <constraint firstItem="eMh-g4-IpJ" firstAttribute="leading" secondItem="z6l-az-kqQ" secondAttribute="trailing" constant="55" id="oA9-LO-S1K"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oWa-3R-Fam"/>
                             <constraint firstItem="tOF-ml-OOM" firstAttribute="leading" secondItem="yOS-K9-9eA" secondAttribute="trailing" constant="134" id="oZT-E8-Y5o"/>
                             <constraint firstItem="7Ug-Q3-Qxy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="px6-eJ-zhy"/>
-                            <constraint firstItem="50y-jQ-M4H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qan-QP-Gol"/>
                             <constraint firstItem="yOS-K9-9eA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="riE-J7-1SP"/>
                             <constraint firstItem="z6l-az-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="zGP-Om-rhz"/>
                         </constraints>
@@ -205,8 +195,6 @@
         <image name="field2" width="1280" height="640"/>
         <image name="lama-alpaca-vector-background" width="700" height="490"/>
         <image name="lama-enemy" width="224" height="128"/>
-        <image name="letf-button" width="300" height="300"/>
-        <image name="right-button" width="300" height="300"/>
         <image name="this-lama" width="54" height="83"/>
     </resources>
 </document>

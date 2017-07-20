@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var enemies: [UIImageView]!
 
     var animationForLama: UIViewPropertyAnimator!
+    var location = CGPoint(x: 0, y: 0)
+    var verif: Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,25 +26,37 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
     
-    @IBAction func moveTUIButton(_ sender: UIButton) {
-        animationForLama.stopAnimation(false)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touché")
+        if let touch = touches.first {
+            location = touch.location(in: self.view)
+            if (lama.layer.frame.contains(location)) {
+                self.verif = true
+            }
+        }
+        super.touchesMoved(touches, with: event)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (self.verif) {
+            // print("mouvé", lama.center)
+            if let touch = touches.first {
+                location = touch.location(in: self.view)
+                lama.center = location
+            }
+            super.touchesMoved(touches, with: event)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.verif = false
     }
 
-    @IBAction func moveTDButton(_ sender: UIButton) {
-        animationForLama = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: {
-            if sender.tag == 0 {
-                self.lama.center.x = sender.frame.origin.x + sender.frame.size.width + self.lama.frame.size.width
-            } else {
-                self.lama.center.x = self.view.frame.size.width - sender.frame.size.width - self.lama.frame.size.width
-            }
-        })
-        animationForLama.startAnimation()
-    }
     
     @objc private func detectColision(_ enemy: UIImageView){
 
             enemies.forEach{(img: UIImageView) in
-                if (lama.layer.presentation()?.frame.intersects((img.layer.presentation()?.frame)!))! {
+                if (lama.layer.frame.intersects((img.layer.presentation()?.frame)!)) {
                     print("COLLISION")
                 }
             }
