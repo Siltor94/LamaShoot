@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kxq-mu-uwS">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field2" translatesAutoresizingMaskIntoConstraints="NO" id="9b7-9a-nIv">
-                                <rect key="frame" x="0.0" y="0.0" width="1280" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1280" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-3M-4DM">
                                 <rect key="frame" x="123" y="89" width="59" height="45"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-fe-RI8">
-                                <rect key="frame" x="583" y="291" width="70" height="70"/>
+                                <rect key="frame" x="291" y="583" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0gA-fe-RI8" secondAttribute="height" multiplier="1:1" id="QNh-l1-7Rz"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="RjA-RP-wJP"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50y-jQ-M4H">
-                                <rect key="frame" x="20" y="290" width="70" height="70"/>
+                                <rect key="frame" x="16" y="582" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="JSM-5s-Syc"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="PqE-mL-8Ri"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this-lama" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-Q3-Qxy">
-                                <rect key="frame" x="306.5" y="272" width="54" height="83"/>
+                                <rect key="frame" x="160.5" y="564" width="54" height="83"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="yOS-K9-9eA">
                                 <rect key="frame" x="29" y="28" width="59" height="45"/>
@@ -79,14 +79,14 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-az-kqQ">
-                                <rect key="frame" x="288" y="68" width="72" height="59"/>
+                                <rect key="frame" x="-4" y="68" width="72" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="z6l-az-kqQ" secondAttribute="height" multiplier="72:59" id="5eS-rL-x1d"/>
                                     <constraint firstAttribute="width" constant="72" id="gAp-uq-lef"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-g4-IpJ">
-                                <rect key="frame" x="415" y="20" width="59" height="45"/>
+                                <rect key="frame" x="123" y="20" width="59" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="6P8-As-nPz"/>
                                     <constraint firstAttribute="width" secondItem="eMh-g4-IpJ" secondAttribute="height" multiplier="59:45" id="QPS-EK-gzS"/>
@@ -135,11 +135,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25.637181409295355" y="23.199999999999999"/>
+            <point key="canvasLocation" x="535" y="257"/>
+        </scene>
+        <!--Menu Controller-->
+        <scene sceneID="Ovv-sf-m8E">
+            <objects>
+                <viewController id="kxq-mu-uwS" customClass="MenuController" customModule="ShootEmUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jPz-mq-SRC"/>
+                        <viewControllerLayoutGuide type="bottom" id="4pL-8m-SBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhb-c9-Dh5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lama-alpaca-vector-background" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-kw-idq">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncM-Ji-wWK">
+                                <rect key="frame" x="86.5" y="549" width="202" height="60"/>
+                                <color key="backgroundColor" red="0.2699629649702131" green="0.28111119923857864" blue="0.27408379753962359" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="Qff-2h-QeS"/>
+                                    <constraint firstAttribute="width" secondItem="ncM-Ji-wWK" secondAttribute="height" multiplier="101:30" id="l5w-TW-gvQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Jouer">
+                                    <color key="titleColor" red="0.9180108979972057" green="0.91712780939761129" blue="1" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="qDW-c5-8vK"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-VL-NII">
+                                <rect key="frame" x="27" y="226" width="320" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LamaShoot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-Hb-OBd">
+                                <rect key="frame" x="121.5" y="28" width="132" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="7p3-uH-iH5"/>
+                                    <constraint firstAttribute="width" secondItem="Gf4-Hb-OBd" secondAttribute="height" multiplier="132:59" id="iYU-Za-Gzq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gf4-Hb-OBd" firstAttribute="top" secondItem="jPz-mq-SRC" secondAttribute="bottom" constant="8" id="9Lo-xp-fH0"/>
+                            <constraint firstItem="4pL-8m-SBf" firstAttribute="top" secondItem="ncM-Ji-wWK" secondAttribute="bottom" constant="58" id="9UX-ui-iey"/>
+                            <constraint firstItem="ncM-Ji-wWK" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="VYD-sx-Is8"/>
+                            <constraint firstItem="8Mp-VL-NII" firstAttribute="centerY" secondItem="qhb-c9-Dh5" secondAttribute="centerY" id="bw5-9a-Aq6"/>
+                            <constraint firstItem="Gf4-Hb-OBd" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="erQ-4S-WRe"/>
+                            <constraint firstItem="8Mp-VL-NII" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="xYV-tb-8X4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myPicker" destination="8Mp-VL-NII" id="UtR-BV-MG8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUb-gK-SoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362.39999999999998" y="256.82158920539734"/>
         </scene>
     </scenes>
     <resources>
         <image name="field2" width="1280" height="640"/>
+        <image name="lama-alpaca-vector-background" width="700" height="490"/>
         <image name="lama-enemy" width="224" height="128"/>
         <image name="letf-button" width="300" height="300"/>
         <image name="right-button" width="300" height="300"/>
