@@ -39,34 +39,6 @@
                                     <constraint firstAttribute="width" constant="59" id="wm9-ir-egg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-fe-RI8">
-                                <rect key="frame" x="291" y="583" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="0gA-fe-RI8" secondAttribute="height" multiplier="1:1" id="QNh-l1-7Rz"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="RjA-RP-wJP"/>
-                                    <constraint firstAttribute="width" constant="70" id="yJ7-Nr-exi"/>
-                                    <constraint firstAttribute="width" secondItem="0gA-fe-RI8" secondAttribute="height" multiplier="1:1" id="zBb-Ey-klR"/>
-                                </constraints>
-                                <state key="normal" image="right-button"/>
-                                <connections>
-                                    <action selector="moveTDButton:" destination="BYZ-38-t0r" eventType="touchDown" id="Scc-Cf-GW6"/>
-                                    <action selector="moveTUIButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOh-qo-N3R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50y-jQ-M4H">
-                                <rect key="frame" x="16" y="582" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="JSM-5s-Syc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="PqE-mL-8Ri"/>
-                                    <constraint firstAttribute="width" secondItem="50y-jQ-M4H" secondAttribute="height" multiplier="64:65" constant="1.076923076923066" id="cxr-40-a5u"/>
-                                    <constraint firstAttribute="width" secondItem="50y-jQ-M4H" secondAttribute="height" multiplier="64:65" constant="1.076923076923066" id="hwj-Us-slD"/>
-                                </constraints>
-                                <state key="normal" image="letf-button"/>
-                                <connections>
-                                    <action selector="moveTDButton:" destination="BYZ-38-t0r" eventType="touchDown" id="0OV-Ox-4Yc"/>
-                                    <action selector="moveTUIButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWt-4H-VTC"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this-lama" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-Q3-Qxy">
                                 <rect key="frame" x="160.5" y="564" width="54" height="83"/>
                             </imageView>
