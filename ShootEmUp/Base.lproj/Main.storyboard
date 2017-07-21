@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kxq-mu-uwS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kxq-mu-uwS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,46 +25,6 @@
                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field2" translatesAutoresizingMaskIntoConstraints="NO" id="9b7-9a-nIv">
                                 <rect key="frame" x="0.0" y="0.0" width="1280" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-3M-4DM">
-                                <rect key="frame" x="123" y="89" width="59" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Nv2-3M-4DM" secondAttribute="height" multiplier="59:45" id="8Fi-a7-7lF"/>
-                                    <constraint firstAttribute="width" constant="59" id="su6-iZ-5II"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="tOF-ml-OOM">
-                                <rect key="frame" x="222" y="20" width="59" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="tOF-ml-OOM" secondAttribute="height" multiplier="59:45" id="791-su-dzb"/>
-                                    <constraint firstAttribute="width" constant="59" id="wm9-ir-egg"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="this-lama" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-Q3-Qxy">
-                                <rect key="frame" x="160.5" y="564" width="54" height="83"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="yOS-K9-9eA">
-                                <rect key="frame" x="29" y="28" width="59" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="eQi-6X-Nui"/>
-                                    <constraint firstAttribute="width" secondItem="yOS-K9-9eA" secondAttribute="height" multiplier="59:45" id="jie-gp-T0g"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-az-kqQ">
-                                <rect key="frame" x="-4" y="68" width="72" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="z6l-az-kqQ" secondAttribute="height" multiplier="72:59" id="5eS-rL-x1d"/>
-                                    <constraint firstAttribute="width" constant="72" id="gAp-uq-lef"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-enemy" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-g4-IpJ">
-                                <rect key="frame" x="123" y="20" width="59" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="6P8-As-nPz"/>
-                                    <constraint firstAttribute="width" secondItem="eMh-g4-IpJ" secondAttribute="height" multiplier="59:45" id="QPS-EK-gzS"/>
-                                    <constraint firstAttribute="width" secondItem="eMh-g4-IpJ" secondAttribute="height" multiplier="59:45" id="cBQ-fi-NDP"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="lig-Hb-Ogr"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjj-io-wHO">
                                 <rect key="frame" x="116" y="307" width="142" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -88,33 +48,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.2961154513888889" green="0.79008050086825166" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ug-Q3-Qxy" secondAttribute="bottom" constant="20" id="1DS-hO-wuo"/>
-                            <constraint firstItem="Nv2-3M-4DM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="123" id="1tj-0z-0Lt"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3yY-7c-Xb1"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EA2-D3-vcL"/>
-                            <constraint firstItem="tOF-ml-OOM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GPY-6N-uas"/>
-                            <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LMJ-FX-dR2"/>
-                            <constraint firstItem="yOS-K9-9eA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="29" id="MUF-sp-202"/>
-                            <constraint firstItem="Nv2-3M-4DM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="YMI-VU-lnl"/>
-                            <constraint firstItem="eMh-g4-IpJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zjb-hW-lU0"/>
-                            <constraint firstAttribute="trailing" secondItem="eMh-g4-IpJ" secondAttribute="trailing" constant="193" id="fTA-Vl-5x2"/>
-                            <constraint firstItem="eMh-g4-IpJ" firstAttribute="leading" secondItem="z6l-az-kqQ" secondAttribute="trailing" constant="55" id="oA9-LO-S1K"/>
                             <constraint firstItem="9b7-9a-nIv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oWa-3R-Fam"/>
-                            <constraint firstItem="tOF-ml-OOM" firstAttribute="leading" secondItem="yOS-K9-9eA" secondAttribute="trailing" constant="134" id="oZT-E8-Y5o"/>
-                            <constraint firstItem="7Ug-Q3-Qxy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="px6-eJ-zhy"/>
-                            <constraint firstItem="yOS-K9-9eA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="riE-J7-1SP"/>
-                            <constraint firstItem="z6l-az-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="zGP-Om-rhz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deathMessage" destination="gHC-rL-BAE" id="jL7-Ij-PH4"/>
-                        <outlet property="lama" destination="7Ug-Q3-Qxy" id="O8y-qv-dgZ"/>
                         <outlet property="retryButton" destination="qjj-io-wHO" id="yKA-VT-X5O"/>
-                        <outletCollection property="enemies" destination="eMh-g4-IpJ" collectionClass="NSMutableArray" id="mge-Xg-Ts2"/>
-                        <outletCollection property="enemies" destination="z6l-az-kqQ" collectionClass="NSMutableArray" id="yjL-SH-6hd"/>
-                        <outletCollection property="enemies" destination="tOF-ml-OOM" collectionClass="NSMutableArray" id="NvI-gH-WMn"/>
-                        <outletCollection property="enemies" destination="Nv2-3M-4DM" collectionClass="NSMutableArray" id="dJn-LY-UAq"/>
-                        <outletCollection property="enemies" destination="yOS-K9-9eA" collectionClass="NSMutableArray" id="EAk-dl-Xh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,7 +94,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-VL-NII">
-                                <rect key="frame" x="27" y="226" width="320" height="216"/>
+                                <rect key="frame" x="27.5" y="225.5" width="320" height="216"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LamaShoot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-Hb-OBd">
                                 <rect key="frame" x="121.5" y="28" width="132" height="59"/>
@@ -188,7 +129,5 @@
     <resources>
         <image name="field2" width="1280" height="640"/>
         <image name="lama-alpaca-vector-background" width="700" height="490"/>
-        <image name="lama-enemy" width="224" height="128"/>
-        <image name="this-lama" width="54" height="83"/>
     </resources>
 </document>

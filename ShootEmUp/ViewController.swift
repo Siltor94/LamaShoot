@@ -8,10 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollisionBehaviorDelegate {
 
-    @IBOutlet weak var lama: UIImageView!
-    @IBOutlet var enemies: [UIImageView]!
+    var lama: UIImageView!
+    var enemies: Array<UIImageView>! = []
+    var shots: Array<UIImageView>! = []
+    
+    // colision test
+    var collision: UICollisionBehavior!
+    var animator: UIDynamicAnimator!
+    var gravity: UIGravityBehavior!
+    
     @IBOutlet weak var deathMessage: UILabel!
     @IBOutlet weak var retryButton: UIButton!
 
@@ -19,23 +26,111 @@ class ViewController: UIViewController {
     var animationForLama: UIViewPropertyAnimator!
     var location = CGPoint(x: 0, y: 0)
     var verif: Bool! = false
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         deathMessage.isHidden = true
         retryButton.isHidden = true
-        enemies.forEach{(img: UIImageView) in
-            animateEnnemy(img)
-        }
         
+        // colision test
+        self.animator = UIDynamicAnimator(referenceView: view)
+        /*let image2: UIImage = UIImage(named: "lama-enemy")!
+        let enemy = UIImageView(image: image2)
+        enemy.frame = CGRect(x: 200, y: 0, width: 50, height: 50)
+        self.view.addSubview(enemy)
+        self.enemies.append(enemy)*/
+        
+        self.gravity = UIGravityBehavior(items: [])
+        self.animator.addBehavior(gravity)
+        self.collision = UICollisionBehavior(items: [])
+        self.collision.translatesReferenceBoundsIntoBoundary = true
+        self.animator.addBehavior(collision)
+        
+        self.screenHeight = self.view.frame.size.height
+        self.screenWidth = self.view.frame.size.width
+        let image: UIImage = UIImage(named: "lama2")!
+        
+        self.lama = UIImageView(image: image)
+        self.lama.frame = CGRect(x: (self.screenWidth / 2) - (self.lama.frame.size.width / 2), y: (self.screenHeight / 1.1) - (self.lama.frame.size.height / 2), width: self.lama.frame.size.width, height: self.lama.frame.size.height)
+        self.view.addSubview(self.lama)
+        
+        location = CGPoint(x: (self.screenWidth / 2) , y: (self.screenHeight / 1.1))
+        
+        // NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        // projectile
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
+        // ennemie
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
+        // verif
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
     
+    func rotate () {
+        print ("aaaarrrghhhhhhhhhh")
+    }
+    
+    func spawn_enemy () {
+        let randomNumber = arc4random_uniform(UInt32(self.view.frame.width - 50))
+        // print("daaaaaaaa  ", self.view.frame.width, randomNumber)
+        
+        let image: UIImage = UIImage(named: "lama-enemy")!
+        let enemy = UIImageView(image: image)
+        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
+        self.view.addSubview(enemy)
+        self.enemies.append(enemy)
+        
+        self.gravity.addItem(enemy)
+        self.collision.addItem(enemy)
+        
+        /*UIView.animate(withDuration: 2, delay: 0, options: .curveLinear, animations: {
+            enemy.center.y = self.view.frame.height
+        }, completion: {finished in
+            enemy.removeFromSuperview()
+            self.enemies.removeFirst()
+        })*/
+    }
+    
+    func spit_it () {
+        
+        let image: UIImage = UIImage(named: "lama-spit")!
+        let spit = UIImageView(image: image)
+        spit.frame = CGRect(x: location.x - 5, y: location.y - self.lama.frame.height, width: 15, height: 30)
+        self.view.addSubview(spit)
+        self.shots.append(spit)
+        
+        let mytimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectShootColision), userInfo: spit, repeats: true)
+        
+        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+            spit.center.y = 0
+        }, completion: {finished in
+            spit.removeFromSuperview()
+            self.shots.removeFirst()
+            mytimer.invalidate()
+        })
+        
+    }
+    
+    func detectShootColision (timer: Timer) {
+        let my = timer.userInfo as! UIImageView
+        enemies.forEach{(img: UIImageView) in
+            // print(img.layer.presentation()?.frame ?? CGRect(x: 0, y: 0, width: 15, height: 30))
+            if ((my.layer.presentation()?.frame ?? CGRect(x: -600, y: -400, width: 15, height: 30)).intersects((img.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
+                print("COLLISION")
+                img.layer.removeAllAnimations()
+                my.layer.removeAllAnimations()
+                //deathMessage.isHidden = false
+                // retryButton.isHidden = false
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touché")
         if let touch = touches.first {
-            location = touch.location(in: self.view)
-            if (lama.layer.frame.contains(location)) {
+            //location = touch.location(in: self.view)
+            if (lama.layer.frame.contains(touch.location(in: self.view))) {
                 self.verif = true
             }
         }
@@ -56,33 +151,6 @@ class ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.verif = false
     }
-    // ANIMATION DES ENNEMIES
-    private func animateEnnemy(_ img: UIImageView){
-        var t: TimeInterval?
-        switch img.tag {
-        case 1:
-            t = TimeInterval(arc4random_uniform(7 - 4) + 4)
-            break
-        case 2:
-            t = TimeInterval(arc4random_uniform(8 - 3) + 3)
-            break
-        case 3:
-            t = TimeInterval(arc4random_uniform(12 - 8) + 8)
-            break
-        default:
-            ()
-        }
-        
-        if let duration = t {
-            UIView.animate(withDuration: duration, animations: {
-                img.center.y = self.view.frame.size.height + 100
-            }, completion: {
-                (true) in
-                img.center.y = -100
-                self.animateEnnemy(img)
-            })
-        }
-    }
     
     // GO TO MENU
     @objc private func goToMenu(){
@@ -93,10 +161,12 @@ class ViewController: UIViewController {
     @objc private func detectColision(_ enemy: UIImageView){
         
         enemies.forEach{(img: UIImageView) in
-            if (lama.layer.frame.intersects((img.layer.presentation()?.frame)!)) {
+            // print(img.layer.presentation()?.frame ?? CGRect(x: 0, y: 0, width: 15, height: 30))
+            if (lama.layer.frame.intersects((img.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
                 print("COLLISION")
-                deathMessage.isHidden = false
-                retryButton.isHidden = false
+                img.layer.removeAllAnimations()
+                //deathMessage.isHidden = false
+                // retryButton.isHidden = false
             }
         }
     }
