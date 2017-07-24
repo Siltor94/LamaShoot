@@ -77,9 +77,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         let randomNumber = arc4random_uniform(UInt32(self.view.frame.width - 50))
         // print("daaaaaaaa  ", self.view.frame.width, randomNumber)
         
-        let image: UIImage = UIImage(named: "lama-enemy")!
+        let image: UIImage = UIImage(named: "el-gato-terriblo")!
         let enemy = UIImageView(image: image)
-        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
+//        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
+        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: Int(enemy.frame.size.width), height: Int(enemy.frame.size.height))
+
         self.view.addSubview(enemy)
         self.enemies.append(enemy)
         
@@ -96,7 +98,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func spit_it () {
         
-        let image: UIImage = UIImage(named: "lama-spit")!
+        let image: UIImage = UIImage(named: "el-crachato")!
         let spit = UIImageView(image: image)
         spit.frame = CGRect(x: location.x - 5, y: location.y - self.lama.frame.height, width: 15, height: 30)
         self.view.addSubview(spit)
