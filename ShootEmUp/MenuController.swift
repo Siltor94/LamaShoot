@@ -12,7 +12,7 @@ import UIKit
 class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var myPicker: UIPickerView!
-    let difficulties = ["Easy", "Normal", "Difficult"]
+    let difficulties = ["Easy", "Normal", "Difficult", "Legendary"]
     var difficulty = [0.5, 2]
     
     override func viewDidLoad() {
@@ -51,13 +51,14 @@ class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print(difficulties[row])
         if (difficulties[row] == "Easy") {
             print("da")
-            difficulty = [0.5, 2]
+            difficulty = [0.3, 1.5]
         } else if (difficulties[row] == "Normal") {
             print("daa")
-            difficulty = [1, 1]
+            difficulty = [0.4, 1]
+        } else if (difficulties[row] == "Difficult"){
+            difficulty = [0.5, 0.5]
         } else {
-            difficulty = [2, 0.5]
+            difficulty = [0.7, 0.2]
         }
     }
-
 }
