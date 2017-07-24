@@ -97,8 +97,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         let randomNumber = arc4random_uniform(UInt32(self.view.frame.width - 50))
         let image: UIImage = UIImage(named: "el-gato-terriblo")!
         let enemy = UIImageView(image: image)
+//        enemy.contentMode = UIViewContentMode.scaleAspectFit
 //        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
-        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: Int(enemy.frame.size.width), height: Int(enemy.frame.size.height))
+        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: Int(enemy.frame.width), height: Int(enemy.frame.height))
 
         self.view.addSubview(enemy)
         self.enemies.append(enemy)
