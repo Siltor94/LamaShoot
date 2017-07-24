@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
 
@@ -15,6 +16,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var shots: Array<UIImageView>! = []
     var shotTimer: Timer!
     var difficulty:Array<Double>! = [0.5, 2]
+    var audioPlayer = AVAudioPlayer()
+    var isPlaying = false
     
     @IBOutlet weak var deathMessage: UILabel!
     @IBOutlet weak var retryButton: UIButton!
@@ -38,6 +41,19 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         print("daaa ", difficulty[0])
         print(difficulty[1])
         
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "el-OST", ofType: "mp3")!))
+            audioPlayer.prepareToPlay()
+        } catch {
+            print(error)
+        }
+        
+        if isPlaying == false {
+            // playMusic()
+        } else {
+            return
+        }
+        
         self.screenHeight = self.view.frame.size.height
         self.screenWidth = self.view.frame.size.width
         let image: UIImage = UIImage(named: "lama2")!
@@ -58,8 +74,25 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
     
+    func playMusic() {
+        audioPlayer.play()
+        isPlaying = true
+    }
+    
     func rotate () {
         print ("aaaarrrghhhhhhhhhh")
+    }
+    
+    @IBAction func ReturnMenu(_ sender: UIButton) {
+        print("return")
+        audioPlayer.stop()
+        
+        // print("%@",self.navigationController?.viewControllers as Any);
+        let _ = self.navigationController?.popViewController(animated: true)
+        // self.navigationController?.popToRootViewController(animated: false)
+//        navigationController?.dismiss(animated: false, completion: { 
+//            print("dismiss")
+//        })
     }
     
     func spawn_enemy () {

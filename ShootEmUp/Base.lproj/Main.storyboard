@@ -58,7 +58,7 @@
                                             <color key="titleShadowColor" red="0.37080345227194017" green="0.37032826223966919" blue="0.37862864847715738" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="kxq-mu-uwS" kind="show" id="UgY-oY-cvo"/>
+                                            <action selector="ReturnMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXt-4r-Q6E"/>
                                         </connections>
                                     </button>
                                 </subviews>
