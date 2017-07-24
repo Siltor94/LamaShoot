@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		521499CA1F20CC60006E852A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521499C91F20CC60006E852A /* MenuController.swift */; };
+		523C56261F262BFD00B9CE30 /* el-OST.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 523C56251F262BFD00B9CE30 /* el-OST.mp3 */; };
 		525968281F1E25C600A6B3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525968271F1E25C600A6B3A3 /* AppDelegate.swift */; };
 		5259682A1F1E25C600A6B3A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525968291F1E25C600A6B3A3 /* ViewController.swift */; };
 		5259682D1F1E25C600A6B3A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5259682B1F1E25C600A6B3A3 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		521499C91F20CC60006E852A /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		523C56251F262BFD00B9CE30 /* el-OST.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "el-OST.mp3"; sourceTree = "<group>"; };
 		525968241F1E25C600A6B3A3 /* ShootEmUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShootEmUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525968271F1E25C600A6B3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		525968291F1E25C600A6B3A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523C56241F262A6D00B9CE30 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				523C56251F262BFD00B9CE30 /* el-OST.mp3 */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 		5259681B1F1E25C600A6B3A3 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 				5259682E1F1E25C600A6B3A3 /* Assets.xcassets */,
 				525968301F1E25C600A6B3A3 /* LaunchScreen.storyboard */,
 				525968331F1E25C600A6B3A3 /* Info.plist */,
+				523C56241F262A6D00B9CE30 /* Music */,
 			);
 			path = ShootEmUp;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			files = (
 				525968321F1E25C600A6B3A3 /* LaunchScreen.storyboard in Resources */,
 				5259682F1F1E25C600A6B3A3 /* Assets.xcassets in Resources */,
+				523C56261F262BFD00B9CE30 /* el-OST.mp3 in Resources */,
 				5259682D1F1E25C600A6B3A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
