@@ -94,8 +94,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func spawn_enemy () {
+        let enemies = ["el-gato-terriblo", "el-pouleto", "el-cochono"]
+        let randomArrayNumber = Int(arc4random_uniform(3))
         let randomNumber = arc4random_uniform(UInt32(self.view.frame.width - 50))
-        let image: UIImage = UIImage(named: "el-gato-terriblo")!
+        let image: UIImage = UIImage(named: enemies[randomArrayNumber] as String)!
         let enemy = UIImageView(image: image)
 //        enemy.contentMode = UIViewContentMode.scaleAspectFit
 //        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
