@@ -138,11 +138,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         self.verif = false
     }
     
-    // GO TO MENU
-    @objc private func goToMenu(){
-        
-    }
-    
     // DETECTION DE COLLISION
     @objc private func detectColision(_ enemy: UIImageView){
         
