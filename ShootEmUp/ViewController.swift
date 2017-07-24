@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var lama: UIImageView!
     var enemies: Array<UIImageView>! = []
     var shots: Array<UIImageView>! = []
+    var shotTimer: Timer!
     
     // colision test
     var collision: UICollisionBehavior!
@@ -35,18 +36,18 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         retryButton.isHidden = true
         
         // colision test
-        self.animator = UIDynamicAnimator(referenceView: view)
-        /*let image2: UIImage = UIImage(named: "lama-enemy")!
-        let enemy = UIImageView(image: image2)
-        enemy.frame = CGRect(x: 200, y: 0, width: 50, height: 50)
-        self.view.addSubview(enemy)
-        self.enemies.append(enemy)*/
-        
-        self.gravity = UIGravityBehavior(items: [])
-        self.animator.addBehavior(gravity)
-        self.collision = UICollisionBehavior(items: [])
-        self.collision.translatesReferenceBoundsIntoBoundary = true
-        self.animator.addBehavior(collision)
+//        self.animator = UIDynamicAnimator(referenceView: view)
+//        let image2: UIImage = UIImage(named: "lama-enemy")!
+//        let enemy = UIImageView(image: image2)
+//        enemy.frame = CGRect(x: 200, y: 0, width: 50, height: 50)
+//        self.view.addSubview(enemy)
+//        self.enemies.append(enemy)
+//        
+//        self.gravity = UIGravityBehavior(items: [])
+//        self.animator.addBehavior(gravity)
+//        self.collision = UICollisionBehavior(items: [])
+//        self.collision.translatesReferenceBoundsIntoBoundary = true
+//        self.animator.addBehavior(collision)
         
         self.screenHeight = self.view.frame.size.height
         self.screenWidth = self.view.frame.size.width
@@ -61,9 +62,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         // NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         // projectile
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
+        shotTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
         // ennemie
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
         // verif
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
@@ -82,15 +83,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         self.view.addSubview(enemy)
         self.enemies.append(enemy)
         
-        self.gravity.addItem(enemy)
-        self.collision.addItem(enemy)
+//        self.gravity.addItem(enemy)
+//        self.collision.addItem(enemy)
         
-        /*UIView.animate(withDuration: 2, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 3, delay: 0, options: .curveLinear, animations: {
             enemy.center.y = self.view.frame.height
         }, completion: {finished in
             enemy.removeFromSuperview()
             self.enemies.removeFirst()
-        })*/
+        })
     }
     
     func spit_it () {
@@ -101,31 +102,16 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         self.view.addSubview(spit)
         self.shots.append(spit)
         
-        let mytimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectShootColision), userInfo: spit, repeats: true)
         
         UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
             spit.center.y = 0
         }, completion: {finished in
             spit.removeFromSuperview()
             self.shots.removeFirst()
-            mytimer.invalidate()
         })
         
     }
     
-    func detectShootColision (timer: Timer) {
-        let my = timer.userInfo as! UIImageView
-        enemies.forEach{(img: UIImageView) in
-            // print(img.layer.presentation()?.frame ?? CGRect(x: 0, y: 0, width: 15, height: 30))
-            if ((my.layer.presentation()?.frame ?? CGRect(x: -600, y: -400, width: 15, height: 30)).intersects((img.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
-                print("COLLISION")
-                img.layer.removeAllAnimations()
-                my.layer.removeAllAnimations()
-                //deathMessage.isHidden = false
-                // retryButton.isHidden = false
-            }
-        }
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -160,13 +146,22 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     // DETECTION DE COLLISION
     @objc private func detectColision(_ enemy: UIImageView){
         
-        enemies.forEach{(img: UIImageView) in
+        enemies.forEach{(enemy: UIImageView) in
             // print(img.layer.presentation()?.frame ?? CGRect(x: 0, y: 0, width: 15, height: 30))
-            if (lama.layer.frame.intersects((img.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
+            if (lama.layer.frame.intersects((enemy.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
                 print("COLLISION")
-                img.layer.removeAllAnimations()
-                //deathMessage.isHidden = false
-                // retryButton.isHidden = false
+                enemy.layer.removeAllAnimations()
+                lama.removeFromSuperview()
+                shotTimer.invalidate()
+                deathMessage.isHidden = false
+                retryButton.isHidden = false
+            }
+            shots.forEach{(shot: UIImageView) in
+                if ((shot.layer.presentation()?.frame ?? CGRect(x: -600, y: -400, width: 15, height: 30)).intersects((enemy.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
+                    print("spittttt COLLISION")
+                    enemy.layer.removeAllAnimations()
+                    shot.layer.removeAllAnimations()
+                }
             }
         }
     }
