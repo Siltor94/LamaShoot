@@ -15,6 +15,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var enemies: Array<UIImageView>! = []
     var shots: Array<UIImageView>! = []
     var shotTimer: Timer!
+    var enemyTimer: Timer!
+    var colisionTimer: Timer!
     var difficulty:Array<Double>! = [0.5, 2]
     var audioPlayer = AVAudioPlayer()
     var isPlaying = false
@@ -49,7 +51,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         }
         
         if isPlaying == false {
-            // playMusic()
+             playMusic()
         } else {
             return
         }
@@ -69,9 +71,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         // projectile
         shotTimer = Timer.scheduledTimer(timeInterval: difficulty[0], target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
         // ennemie
-        Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
+        enemyTimer = Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
         // verif
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
+        colisionTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
     
     func playMusic() {
@@ -86,19 +88,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     @IBAction func ReturnMenu(_ sender: UIButton) {
         print("return")
         audioPlayer.stop()
-        
-        // print("%@",self.navigationController?.viewControllers as Any);
-        let _ = self.navigationController?.popViewController(animated: true)
-        // self.navigationController?.popToRootViewController(animated: false)
-//        navigationController?.dismiss(animated: false, completion: { 
-//            print("dismiss")
-//        })
+        enemyTimer.invalidate()
+        colisionTimer.invalidate()
+        self.presentingViewController!.dismiss(animated: true, completion: nil)
     }
     
     func spawn_enemy () {
         let randomNumber = arc4random_uniform(UInt32(self.view.frame.width - 50))
-        // print("daaaaaaaa  ", self.view.frame.width, randomNumber)
-        
         let image: UIImage = UIImage(named: "el-gato-terriblo")!
         let enemy = UIImageView(image: image)
 //        enemy.frame = CGRect(x: Int(randomNumber), y: 0, width: 50, height: 50)
