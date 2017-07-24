@@ -31,9 +31,12 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var score = 0;
+    var test: [String] = MenuController().getGameParams()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewController ==> ")
+        print(test)
         deathMessage.isHidden = true
         retryButton.isHidden = true
         scoreLabel.text = String(score)

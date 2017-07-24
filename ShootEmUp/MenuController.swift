@@ -12,7 +12,9 @@ import UIKit
 class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var myPicker: UIPickerView!
-    let difficulties = ["Easy", "Normal", "Diffcult"]
+    let difficulties = ["Easy", "Normal", "Difficult"]
+
+    var gameParams: [String] = ["test"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +36,18 @@ class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(difficulties[row])
+        setterdelamuerte(test: difficulties[row])
+        print("Avant de get ==> ")
+        print(self.gameParams)
+    }
+    
+    func setterdelamuerte(test: String){
+        self.gameParams.append(test)
+    }
+    
+    func getGameParams() -> [String]{
+        print("Dans le get ==> ")
+        print(self.gameParams)
+        return self.gameParams
     }
 }
