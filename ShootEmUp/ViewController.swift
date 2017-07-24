@@ -22,6 +22,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var deathMessage: UILabel!
     @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
 
     
     var animationForLama: UIViewPropertyAnimator!
@@ -29,11 +30,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var verif: Bool! = false
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    var score = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         deathMessage.isHidden = true
         retryButton.isHidden = true
+        scoreLabel.text = String(score)
         
         // colision test
 //        self.animator = UIDynamicAnimator(referenceView: view)
@@ -158,6 +161,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                     print("spittttt COLLISION")
                     enemy.layer.removeAllAnimations()
                     shot.layer.removeAllAnimations()
+                    score = score + 1
+                    scoreLabel.text = String(score)
                 }
             }
         }
