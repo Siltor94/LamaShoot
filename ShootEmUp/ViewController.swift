@@ -14,11 +14,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var enemies: Array<UIImageView>! = []
     var shots: Array<UIImageView>! = []
     var shotTimer: Timer!
-    
-    // colision test
-    var collision: UICollisionBehavior!
-    var animator: UIDynamicAnimator!
-    var gravity: UIGravityBehavior!
+    var difficulty:Array<Double>! = [0.5, 2]
     
     @IBOutlet weak var deathMessage: UILabel!
     @IBOutlet weak var retryButton: UIButton!
@@ -31,29 +27,16 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var score = 0;
-    var test: [String] = MenuController().getGameParams()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewController ==> ")
-        print(test)
         deathMessage.isHidden = true
         retryButton.isHidden = true
         scoreLabel.text = String(score)
         
-        // colision test
-//        self.animator = UIDynamicAnimator(referenceView: view)
-//        let image2: UIImage = UIImage(named: "lama-enemy")!
-//        let enemy = UIImageView(image: image2)
-//        enemy.frame = CGRect(x: 200, y: 0, width: 50, height: 50)
-//        self.view.addSubview(enemy)
-//        self.enemies.append(enemy)
-//        
-//        self.gravity = UIGravityBehavior(items: [])
-//        self.animator.addBehavior(gravity)
-//        self.collision = UICollisionBehavior(items: [])
-//        self.collision.translatesReferenceBoundsIntoBoundary = true
-//        self.animator.addBehavior(collision)
+        print("daaa ", difficulty[0])
+        print(difficulty[1])
         
         self.screenHeight = self.view.frame.size.height
         self.screenWidth = self.view.frame.size.width
@@ -68,9 +51,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         // NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         // projectile
-        shotTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
+        shotTimer = Timer.scheduledTimer(timeInterval: difficulty[0], target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
         // ennemie
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
         // verif
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
@@ -90,9 +73,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
 
         self.view.addSubview(enemy)
         self.enemies.append(enemy)
-        
-//        self.gravity.addItem(enemy)
-//        self.collision.addItem(enemy)
         
         UIView.animate(withDuration: 3, delay: 0, options: .curveLinear, animations: {
             enemy.center.y = self.view.frame.height
@@ -123,7 +103,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            //location = touch.location(in: self.view)
             if (lama.layer.frame.contains(touch.location(in: self.view))) {
                 self.verif = true
             }

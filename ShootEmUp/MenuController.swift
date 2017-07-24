@@ -13,13 +13,26 @@ class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var myPicker: UIPickerView!
     let difficulties = ["Easy", "Normal", "Difficult"]
-
-    var gameParams: [String] = ["test"]
+    var difficulty = [0.5, 2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myPicker.delegate = self
         myPicker.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "playGame" {
+            let detailViewController = segue.destination as! ViewController
+            detailViewController.difficulty = difficulty as Array
+        }
+        
+    }
+    
+    @IBAction func play(_ sender: UIButton) {
+        print(difficulty)
+        performSegue(withIdentifier: "playGame", sender: difficulty)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -36,18 +49,15 @@ class MenuController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(difficulties[row])
-        setterdelamuerte(test: difficulties[row])
-        print("Avant de get ==> ")
-        print(self.gameParams)
+        if (difficulties[row] == "Easy") {
+            print("da")
+            difficulty = [0.5, 2]
+        } else if (difficulties[row] == "Normal") {
+            print("daa")
+            difficulty = [1, 1]
+        } else {
+            difficulty = [2, 0.5]
+        }
     }
-    
-    func setterdelamuerte(test: String){
-        self.gameParams.append(test)
-    }
-    
-    func getGameParams() -> [String]{
-        print("Dans le get ==> ")
-        print(self.gameParams)
-        return self.gameParams
-    }
+
 }

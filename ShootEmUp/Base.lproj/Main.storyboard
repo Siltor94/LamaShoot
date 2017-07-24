@@ -116,9 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lama-alpaca-vector-background" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-kw-idq">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama-alpaca-vector-background" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-kw-idq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncM-Ji-wWK">
                                 <rect key="frame" x="86.5" y="549" width="202" height="60"/>
@@ -132,7 +131,7 @@
                                     <color key="titleColor" red="0.9180108979972057" green="0.91712780939761129" blue="1" alpha="0.99389982876712324" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="lgo-qn-BGi"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="playGame" id="lgo-qn-BGi"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-VL-NII">
@@ -151,11 +150,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b1U-kw-idq" firstAttribute="top" secondItem="qhb-c9-Dh5" secondAttribute="top" id="4Ck-XK-sRJ"/>
                             <constraint firstItem="Gf4-Hb-OBd" firstAttribute="top" secondItem="jPz-mq-SRC" secondAttribute="bottom" constant="8" id="9Lo-xp-fH0"/>
                             <constraint firstItem="4pL-8m-SBf" firstAttribute="top" secondItem="ncM-Ji-wWK" secondAttribute="bottom" constant="58" id="9UX-ui-iey"/>
                             <constraint firstItem="ncM-Ji-wWK" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="VYD-sx-Is8"/>
                             <constraint firstItem="8Mp-VL-NII" firstAttribute="centerY" secondItem="qhb-c9-Dh5" secondAttribute="centerY" id="bw5-9a-Aq6"/>
+                            <constraint firstItem="b1U-kw-idq" firstAttribute="leading" secondItem="qhb-c9-Dh5" secondAttribute="leading" id="e6s-7f-joT"/>
                             <constraint firstItem="Gf4-Hb-OBd" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="erQ-4S-WRe"/>
+                            <constraint firstItem="4pL-8m-SBf" firstAttribute="top" secondItem="b1U-kw-idq" secondAttribute="bottom" id="jNx-aT-A6G"/>
+                            <constraint firstAttribute="trailing" secondItem="b1U-kw-idq" secondAttribute="trailing" id="mzq-AL-XSS"/>
                             <constraint firstItem="8Mp-VL-NII" firstAttribute="centerX" secondItem="qhb-c9-Dh5" secondAttribute="centerX" id="xYV-tb-8X4"/>
                         </constraints>
                     </view>
