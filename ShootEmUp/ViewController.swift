@@ -46,14 +46,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "el-OST", ofType: "mp3")!))
             audioPlayer.prepareToPlay()
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
         } catch {
             print(error)
-        }
-        
-        if isPlaying == false {
-             playMusic()
-        } else {
-            return
         }
         
         self.screenHeight = self.view.frame.size.height
@@ -74,11 +70,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         enemyTimer = Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
         // verif
         colisionTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
-    }
-    
-    func playMusic() {
-        audioPlayer.play()
-        isPlaying = true
     }
     
     func rotate () {
