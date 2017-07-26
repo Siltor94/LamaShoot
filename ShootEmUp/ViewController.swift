@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollisionBehaviorDelegate {
+class ViewController: UIViewController {
 
     var lama: UIImageView!
     var enemies: Array<UIImageView>! = []
@@ -35,13 +35,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewController ==> ")
+        // print("ViewController ==> ")
         deathMessage.isHidden = true
         retryButton.isHidden = true
         scoreLabel.text = String(score)
         
-        print("daaa ", difficulty[0])
-        print(difficulty[1])
+        // print("daaa ", difficulty[0])
+        // print(difficulty[1])
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "el-OST", ofType: "mp3")!))
@@ -60,9 +60,20 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         self.lama.frame = CGRect(x: (self.screenWidth / 2) - (self.lama.frame.size.width / 2), y: (self.screenHeight / 1.1) - (self.lama.frame.size.height / 2), width: self.lama.frame.size.width, height: self.lama.frame.size.height)
         self.view.addSubview(self.lama)
         
+        lama.animationImages = [
+            
+            UIImage(named: "lama2")!, //File Extension would not be required if .png
+            UIImage(named: "lama3")!,  //File Extension would not be required if .png
+            UIImage(named: "lama4")!,
+            UIImage(named: "lama5")!
+        ]
+        
+        lama.animationDuration = 1
+        lama.startAnimating()
+        
         location = CGPoint(x: (self.screenWidth / 2) , y: (self.screenHeight / 1.1))
         
-        // NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         // projectile
         shotTimer = Timer.scheduledTimer(timeInterval: difficulty[0], target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
@@ -73,11 +84,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func rotate () {
-        print ("aaaarrrghhhhhhhhhh")
+        print ("aaaarrrghhhhhhhhhh", location.x, self.view.frame.height, self.view.frame.width)
+        let tmp = lama.center.y
+        lama.center.y = lama.center.x
+        lama.center.x = tmp
+        location = lama.center
     }
     
     @IBAction func ReturnMenu(_ sender: UIButton) {
-        print("return")
+        // print("return")
         audioPlayer.stop()
         enemyTimer.invalidate()
         colisionTimer.invalidate()
@@ -154,7 +169,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         enemies.forEach{(enemy: UIImageView) in
             // print(img.layer.presentation()?.frame ?? CGRect(x: 0, y: 0, width: 15, height: 30))
             if (lama.layer.frame.intersects((enemy.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
-                print("COLLISION")
+                
                 enemy.layer.removeAllAnimations()
                 lama.removeFromSuperview()
                 shotTimer.invalidate()
@@ -163,7 +178,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
             shots.forEach{(shot: UIImageView) in
                 if ((shot.layer.presentation()?.frame ?? CGRect(x: -600, y: -400, width: 15, height: 30)).intersects((enemy.layer.presentation()?.frame) ?? CGRect(x: -400, y: -400, width: 15, height: 30))) {
-                    print("spittttt COLLISION")
+                    
                     enemy.layer.removeAllAnimations()
                     shot.layer.removeAllAnimations()
                     score = score + 1
