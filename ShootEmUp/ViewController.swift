@@ -62,8 +62,8 @@ class ViewController: UIViewController {
         
         lama.animationImages = [
             
-            UIImage(named: "lama2")!, //File Extension would not be required if .png
-            UIImage(named: "lama3")!,  //File Extension would not be required if .png
+            UIImage(named: "lama2")!,
+            UIImage(named: "lama3")!,
             UIImage(named: "lama4")!,
             UIImage(named: "lama5")!
         ]
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     func rotate () {
-        print ("aaaarrrghhhhhhhhhh", location.x, self.view.frame.height, self.view.frame.width)
+        // print ("aaaarrrghhhhhhhhhh", location.x, self.view.frame.height, self.view.frame.width)
         let tmp = lama.center.y
         lama.center.y = lama.center.x
         lama.center.x = tmp
