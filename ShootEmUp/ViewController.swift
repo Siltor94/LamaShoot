@@ -54,6 +54,19 @@ class ViewController: UIViewController {
         
         self.screenHeight = self.view.frame.size.height
         self.screenWidth = self.view.frame.size.width
+        init_lama()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        // projectile
+        shotTimer = Timer.scheduledTimer(timeInterval: difficulty[0], target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
+        // ennemie
+        enemyTimer = Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
+        // verif
+        colisionTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
+    }
+    
+    func init_lama() {
         let image: UIImage = UIImage(named: "lama2")!
         
         self.lama = UIImageView(image: image)
@@ -72,15 +85,6 @@ class ViewController: UIViewController {
         lama.startAnimating()
         
         location = CGPoint(x: (self.screenWidth / 2) , y: (self.screenHeight / 1.1))
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(rotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
-        // projectile
-        shotTimer = Timer.scheduledTimer(timeInterval: difficulty[0], target: self, selector: #selector(self.spit_it), userInfo: nil, repeats: true)
-        // ennemie
-        enemyTimer = Timer.scheduledTimer(timeInterval: difficulty[1], target: self, selector: #selector(self.spawn_enemy), userInfo: nil, repeats: true)
-        // verif
-        colisionTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.detectColision), userInfo: nil, repeats: true)
     }
     
     func rotate () {
